@@ -45,6 +45,7 @@ class User extends Controller
             $list = UserModel::paginate(3);
         }
         $this->assign('list', $list);
+        $this->assign('data', dump($list->toArray(), false));
         $this->assign('count', count($list));
         return $this->fetch();
     }
