@@ -22,7 +22,7 @@ return [
 
     '[user]' =>[
         'add' => ['demo/User/add', ['method' => 'get']],
-        ':id' => ['demo/User/read'],
+        '[:id]' => ['demo/User/read'],
         'update/:id/:email' => ['demo/User/update'],
         'delete/:id' => ['demo/User/delete'],
         'addbook/:id' =>['demo/User/addBook'],

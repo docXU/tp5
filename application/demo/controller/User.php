@@ -12,6 +12,7 @@ use app\demo\model\User as UserModel;
 use app\demo\model\Profile;
 
 use think\Controller;
+use think\Model;
 
 class User extends Controller
 {
@@ -34,10 +35,18 @@ class User extends Controller
         }
     }
 
-    public function read($id)
+    public function read($id = "")
     {
-        $user = UserModel::get($id, 'profile');
-        dump($user->toJson());
+        $list = null;
+        if ($id !== "") {
+            //将对象放到数组里，应该volist是遍历数组的
+            $list[0] = UserModel::get($id, 'profile');
+        } else {
+            $list = UserModel::paginate(3);
+        }
+        $this->assign('list', $list);
+        $this->assign('count', count($list));
+        return $this->fetch();
     }
 
     public function update($id, $email)
