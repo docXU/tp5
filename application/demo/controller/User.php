@@ -37,9 +37,7 @@ class User extends Controller
     public function read($id)
     {
         $user = UserModel::get($id, 'profile');
-        echo $user->name . '<br/>';
-        echo $user->profile->truename . '<br/>';
-        dump($user);
+        dump($user->toJson());
     }
 
     public function update($id, $email)
