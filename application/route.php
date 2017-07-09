@@ -26,5 +26,6 @@ return [
         'update/:id/:email' => ['demo/User/update'],
         'delete/:id' => ['demo/User/delete'],
         'addbook/:id' =>['demo/User/addBook'],
+        'addrole/:id/:name/:title' => ['demo/User/addRole']
     ]
 ];

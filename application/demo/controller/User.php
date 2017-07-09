@@ -72,4 +72,13 @@ class User extends Controller
         return '添加Book成功';
     }
 
+    public function addRole($id, $name, $title)
+    {
+        $user = UserModel::get($id);
+        $user->roles()->saveAll([
+            ['name' => $name, 'title' => $title],
+            ['name' => 'admin', 'title' => '管理员'],
+        ]);
+        return '用户角色增加成功';
+    }
 }

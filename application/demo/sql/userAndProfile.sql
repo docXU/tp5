@@ -39,5 +39,22 @@ CREATE TABLE IF NOT EXISTS `think_book` (
   ENGINE = MyISAM
   DEFAULT CHARSET = utf8;
 
+DROP TABLE IF EXISTS `think_role`;
+CREATE TABLE IF NOT EXISTS `think_role` (
+  `id`    INT(5) UNSIGNED NOT NULL  AUTO_INCREMENT,
+  `name`  VARCHAR(25)     NOT NULL,
+  `title` VARCHAR(50)     NOT NULL,
+  PRIMARY KEY (`id`)
+)
+  ENGINE = MyISAM
+  DEFAULT CHARSET = utf8;
+
+DROP TABLE IF EXISTS `think_access`;
+CREATE TABLE IF NOT EXISTS `think_access` (
+  `user_id` INT(6) UNSIGNED NOT NULL,
+  `role_id` INT(5) UNSIGNED NOT NULL
+)
+  ENGINE = MyISAM
+  DEFAULT CHARSET = utf8;
 
 

@@ -27,4 +27,9 @@ class User extends Model
         return $this->hasMany('Book');
     }
 
+    public function roles()
+    {
+        return $this->belongsToMany('Role', 'access');
+    }
+
 }
