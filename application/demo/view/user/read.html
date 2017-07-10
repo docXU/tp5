@@ -1,4 +1,4 @@
-{include file="user/header" /}
+{layout name="layout/readLayout" /}
 <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css" />
 {$data}
 <h2>用户列表({$list->total()})</h2>
@@ -9,5 +9,4 @@
 </div>
 {/volist}
 {$list->render()}
-{include file="user/footer" /}
 

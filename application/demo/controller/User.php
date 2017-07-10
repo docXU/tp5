@@ -47,6 +47,8 @@ class User extends Controller
         $this->assign('list', $list);
         $this->assign('data', dump($list->toArray(), false));
         $this->assign('count', count($list));
+        //动态启动模板布局文件,这里因为已经在read.html里启动布局,所以注释了,无需再执行
+        //$this->view->engine->layout('layout/readLayout');
         return $this->fetch();
     }
 
